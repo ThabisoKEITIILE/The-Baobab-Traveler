@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Booking - The Baobab Traveler</title>
+    <meta name="description" content="Book your Botswana cultural experience with The Baobab Traveler">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">The Baobab Traveler</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="taste.html">Taste of Botswana</a></li>
+                
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Book Now</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section style="padding: 4rem 0;">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h1 class="mb-2">Book Your Experience</h1>
+                    <p style="color: var(--text-secondary); font-size: 1.125rem;">Start your journey beneath the baobabs</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto;">
+                    <!-- Booking Form -->
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="mb-3">Booking Form</h2>
+                            <form onsubmit="handleBooking(event)">
+                                <div class="form-group">
+                                    <label for="name">Full Name *</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="package">Select Package *</label>
+                                    <select id="package" name="package" required>
+                                        <option value="">Choose a package</option>
+                                        <option value="classic">Classic Baobab Traveler (4D/3N)</option>
+                                        <option value="adventure">Adventure Trail (5D/4N)</option>
+                                        <option value="culinary">Culinary Roots (3D/2N)</option>
+                                    </select>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                    <div class="form-group">
+                                        <label for="date">Preferred Start Date *</label>
+                                        <input type="date" id="date" name="date" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="travelers">Number of Travelers *</label>
+                                        <input type="number" id="travelers" name="travelers" min="1" max="10" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message">Special Requests or Questions</label>
+                                    <textarea id="message" name="message" rows="4"></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Booking Request</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div>
+                        <div class="card mb-3">
+                            <div class="card-content">
+                                <h3 class="mb-3">Contact Information</h3>
+                                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                                    <div>
+                                        <div style="font-weight: 600; margin-bottom: 0.25rem;">📍 Location</div>
+                                        <div style="color: var(--text-secondary);">Mathangwane Village<br>Botswana</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: 600; margin-bottom: 0.25rem;">📞 Phone</div>
+                                        <div style="color: var(--text-secondary);">+267 76 198 885</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: 600; margin-bottom: 0.25rem;">✉️ Email</div>
+                                        <div style="color: var(--text-secondary);">info@baobab traveler.co.bw</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: 600; margin-bottom: 0.25rem;">🕐 Business Hours</div>
+                                        <div style="color: var(--text-secondary);">Mon-Fri: 8am - 6pm<br>Sat: 9am - 4pm<br>Sun: Closed</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-content">
+                                <h3 class="mb-2">Quick Contact</h3>
+                                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
+                                    For immediate inquiries, contact us via WhatsApp
+                                </p>
+                                <button onclick="openWhatsApp()" class="btn btn-primary" style="width: 100%;">
+                                    💬 WhatsApp Chat
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="section-alt">
+            <div class="container text-center">
+                <h2 class="mb-3">Find Us</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                    Starting Point: Mathangwane Village, Botswana
+                </p>
+                <div style="background: var(--border); height: 400px; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: var(--text-secondary);">
+                    [Map of Mathangwane Village, Botswana - Integrate Google Maps or similar service]
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section>
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="card mb-3">
+                        <div class="card-content">
+                            <h3 class="mb-2">What's included in the packages?</h3>
+                            <p style="color: var(--text-secondary);">
+                                All packages include accommodation, meals, guided activities, cultural experiences, and a tree-planting ceremony. 
+                                Transportation from the starting point is also included.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="card-content">
+                            <h3 class="mb-2">What should I bring?</h3>
+                            <p style="color: var(--text-secondary);">
+                                Comfortable walking shoes, sun protection, light clothing for daytime and warmer layers for evenings, 
+                                camera, reusable water bottle, and an open mind!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="card-content">
+                            <h3 class="mb-2">Is this suitable for solo travelers?</h3>
+                            <p style="color: var(--text-secondary);">
+                                Absolutely! Many of our guests travel solo. You'll join a small group and make lasting friendships 
+                                while experiencing Botswana's culture together.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 class="mb-2">How do I make payment?</h3>
+                            <p style="color: var(--text-secondary);">
+                                After submitting your booking request, we'll contact you with payment options including bank transfer, 
+                                PayPal, or Orange Money. A deposit of 30% secures your booking.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="sustainability.html">Sustainability</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Packages</h3>
+                    <ul class="footer-links">
+                        <li><a href="package-classic.html">Classic Baobab Traveler</a></li>
+                        <li><a href="package-adventure.html">Adventure Trail</a></li>
+                        <li><a href="package-culinary.html">Culinary Roots</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.875rem;">
+                        📍 Mathangwane Village, Botswana<br>
+                        📞 +267 76 198 885<br>
+                        ✉️ info@baobab traveler.co.bw
+                    </p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">f</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="Twitter">🐦</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 The Baobab Traveler. Founded by CEO Mr. Omphile Kenosi & Head Engineer Mr. Thabiso Keitiile</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
